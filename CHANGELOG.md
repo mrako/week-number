@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.17](https://github.com/mrako/week-number/compare/v0.0.16...v0.0.17) (2021-11-10)
+
+
+### Bug Fixes
+
+* **app:** fix week numbers ([99feed8](https://github.com/mrako/week-number/commit/99feed8ac2dba70c67892d07903998ea3b726791))
+
 ### [0.0.16](https://github.com/mrako/week-number/compare/v0.0.15...v0.0.16) (2021-11-10)
 
 
