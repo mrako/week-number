@@ -1,16 +1,9 @@
-const MILLISECONDS_PER_DAY = 86400000; // 24 * 60 * 60 * 1000
-
-const getNumberOfWeek = (dt) => {
-  const date = dt || new Date();
-  const firstDayOfYear = new Date(date.getFullYear(), 0, 1);
-
-  const weekNumber = Math.ceil((((date.getTime() - firstDayOfYear.getTime()) / MILLISECONDS_PER_DAY) + 1) / 7);
-
-  if (date.getDay() === 4) {
-    return weekNumber - 1;
-  }
-
-  return weekNumber;
+const getWeekNumber = (date = new Date()) => {
+    date.setHours(0, 0, 0, 0);
+    date.setDate(date.getDate() + 3 - (date.getDay() + 6) % 7);
+    const startOfYear = new Date(date.getFullYear(), 0, 4);
+    const weekNumber = 1 + Math.round(((date - startOfYear) / 86400000 - 3 + (startOfYear.getDay() + 6) % 7) / 7);
+    return weekNumber;
 };
 
-module.exports = { getNumberOfWeek };
+module.exports = { getWeekNumber };
