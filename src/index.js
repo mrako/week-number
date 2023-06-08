@@ -1,3 +1,4 @@
+import React from 'react';
 import { createRoot } from 'react-dom';
 
 import { getWeekNumber } from './weeknumber';
@@ -7,5 +8,5 @@ const App = () => (
 );
 
 const container = document.getElementById("app");
-const root = createRoot(container)
+const root = createRoot(container);
 root.render(<App />);
