@@ -1,7 +1,13 @@
+# OSX
 .DS_Store
 
+# NPM
 node_modules
 
+# Parcel
 dist
 public
+
+# Cache
 .parcel-cache
+.vscode

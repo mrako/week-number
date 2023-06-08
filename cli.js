@@ -12,4 +12,4 @@ yargs(process.argv.slice(2))
   .alias('v', 'version')
   .argv;
 
-console.log(`This week is number ${weeknumber.getNumberOfWeek()}.`);
+console.log(`The current week number is ${weeknumber.getWeekNumber()}.`);
