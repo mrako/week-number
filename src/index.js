@@ -4,7 +4,7 @@ import { createRoot } from 'react-dom/client';
 import { getWeekNumber } from './weeknumber';
 
 const App = () => (
-  <h1>{ getWeekNumber() }</h1>
+  <h1>{ getWeekNumber ? getWeekNumber() : '-' }</h1>
 );
 
 const container = document.getElementById("app");
