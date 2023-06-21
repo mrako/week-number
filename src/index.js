@@ -8,9 +8,9 @@ const App = () => {
 
   useEffect(() => {
     const searchParams = new URLSearchParams(window.location.search);
-    const date = Date.parse(searchParams.get('date'));
+    const dateParam = Date.parse(searchParams.get('date'));
 
-    setDate(isNaN(date) ? new Date() : new Date(date));
+    setDate(isNaN(dateParam) ? new Date() : new Date(dateParam));
   }, []);
 
   if (date) {
