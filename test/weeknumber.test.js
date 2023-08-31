@@ -21,4 +21,9 @@ describe('getWeekNumber', () => {
     const date = new Date("2023-01-02T00:00:00.000");
     expect(weeknumber.getWeekNumber(date)).toEqual(1);
   });
+
+  it('should return 35 for 3rd of September 2023', () => {
+    const date = new Date("2023-09-03T00:00:00.000");
+    expect(weeknumber.getWeekNumber(date)).toEqual(35);
+  });
 });
