@@ -27,4 +27,8 @@ describe('getWeekNumber', () => {
     expect(weeknumber.getWeekNumber(date)).toEqual(43);
   });
 
+  it('should return week 45 for November 10th 2023', () => {
+    const date = new Date("2023-11-10T00:00:00.000");
+    expect(weeknumber.getWeekNumber(date)).toEqual(45);
+  });
 });
