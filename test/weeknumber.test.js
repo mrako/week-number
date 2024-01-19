@@ -21,4 +21,9 @@ describe('getWeekNumber', () => {
     const date = new Date("2023-01-02T00:00:00.000");
     expect(weeknumber.getWeekNumber(date)).toEqual(1);
   });
+
+  it('should return week 3 for 19th of January 2024', () => {
+    const date = new Date("2024-01-19T00:00:00.000");
+    expect(weeknumber.getWeekNumber(date)).toEqual(3);
+  });
 });
