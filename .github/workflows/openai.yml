@@ -15,6 +15,10 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v4
 
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
       - name: Code Reviewer
         uses: freeedcom/ai-codereviewer@v2.4.1
         with:
