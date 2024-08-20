@@ -5,4 +5,4 @@ function getWeekNumber(date = new Date()) {
   return Math.ceil((pastDaysOfYear + firstDayOfYear.getDay() + 1) / 7);
 }
 
-module.exports = { getWeekNumber};
+module.exports = { getWeekNumber };
