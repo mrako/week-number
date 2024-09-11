@@ -21,6 +21,7 @@
     "start": "./node_modules/.bin/parcel --no-cache src/index.html",
     "test": "jest",
     "playwright": "playwright test",
+    "playwright:headed": "playwright test --headed",
     "lint": "eslint *.js src test",
     "release": "./node_modules/.bin/standard-version && git push --follow-tags"
   },
