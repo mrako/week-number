@@ -9,6 +9,7 @@ test.describe('week number', () => {
 
   test('is displayed correctly', async ({ page }) => {
     const contents = page.locator('h1');
+    await new Promise(resolve => setTimeout(resolve, 3000));
     await expect(contents).toHaveText(getWeekNumber().toString());
   });
 });
