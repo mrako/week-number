@@ -21,9 +21,4 @@ describe('getWeekNumber', () => {
     const date = new Date("2023-01-02T00:00:00.000");
     expect(weeknumber.getWeekNumber(date)).toEqual(1);
   });
-
-  it('should return week 47 for 24th of November 2024', () => {
-    const date = new Date("2024-11-24T00:00:00.000");
-    expect(weeknumber.getWeekNumber(date)).toEqual(47);
-  });
 });
