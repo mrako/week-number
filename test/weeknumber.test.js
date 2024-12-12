@@ -21,4 +21,9 @@ describe('getWeekNumber', () => {
     const date = new Date("2023-01-02T00:00:00.000");
     expect(weeknumber.getWeekNumber(date)).toEqual(1);
   });
+
+  it('should return week 50 for Sunday 15th of December 2024', () => {
+    const date = new Date("2024-12-15T00:00:00.000");
+    expect(weeknumber.getWeekNumber(date)).toEqual(50);
+  });
 });
