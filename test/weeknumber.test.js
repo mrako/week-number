@@ -21,4 +21,35 @@ describe('getWeekNumber', () => {
     const date = new Date("2023-01-02T00:00:00.000");
     expect(weeknumber.getWeekNumber(date)).toEqual(1);
   });
+
+  it('should return week 9 for 2nd of March 2025', () => {
+    const date = new Date("2025-03-02T00:00:00.000");
+    expect(weeknumber.getWeekNumber(date)).toEqual(9);
+  });
+
+  it('should handle last week of previous year', () => {
+    const date = new Date("2023-01-01T00:00:00.000");
+    expect(weeknumber.getWeekNumber(date)).toEqual(52);
+  });
+
+  it('should handle week 53 case', () => {
+    const date = new Date("2020-12-31T00:00:00.000");
+    expect(weeknumber.getWeekNumber(date)).toEqual(53);
+  });
+
+  it('should return same week number for different days in same week', () => {
+    const monday = new Date("2023-06-19T00:00:00.000");
+    const sunday = new Date("2023-06-25T00:00:00.000");
+    expect(weeknumber.getWeekNumber(monday)).toEqual(25);
+    expect(weeknumber.getWeekNumber(sunday)).toEqual(25);
+  });
+
+  it('should handle first week of next year in current year', () => {
+    const date = new Date("2023-12-31T00:00:00.000");
+    expect(weeknumber.getWeekNumber(date)).toEqual(52);
+  });
+
+  it('should handle invalid date input', () => {
+    expect(() => weeknumber.getWeekNumber('invalid')).toThrow();
+  });
 });
