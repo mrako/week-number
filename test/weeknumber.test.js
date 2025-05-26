@@ -22,3 +22,25 @@ describe('getWeekNumber', () => {
     expect(weeknumber.getWeekNumber(date)).toEqual(1);
   });
 });
+
+describe('formatDate', () => {
+  it('should format date in ISO format by default', () => {
+    const date = new Date("2023-06-22T12:00:00.000");
+    expect(weeknumber.formatDate(date)).toEqual('2023-06-22');
+  });
+
+  it('should format date in US format', () => {
+    const date = new Date("2023-06-22T12:00:00.000");
+    expect(weeknumber.formatDate(date, 'US')).toEqual('6/22/2023');
+  });
+
+  it('should format date in EU format', () => {
+    const date = new Date("2023-06-22T12:00:00.000");
+    expect(weeknumber.formatDate(date, 'EU')).toEqual('22/6/2023');
+  });
+
+  it('should use ISO format for unknown format types', () => {
+    const date = new Date("2023-06-22T12:00:00.000");
+    expect(weeknumber.formatDate(date, 'UNKNOWN')).toEqual('2023-06-22');
+  });
+});

@@ -5,4 +5,16 @@ function getWeekNumber(date = new Date()) {
   return Math.floor(diff / oneWeek) + 1;
 }
 
-module.exports = {getWeekNumber};
+function formatDate(date = new Date(), format = 'ISO') {
+  switch (format.toUpperCase()) {
+    case 'US':
+      return `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`;
+    case 'EU':
+      return `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`;
+    case 'ISO':
+    default:
+      return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
+  }
+}
+
+module.exports = {getWeekNumber, formatDate};
